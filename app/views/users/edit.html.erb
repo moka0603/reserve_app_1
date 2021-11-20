@@ -1,0 +1,24 @@
+<% if @error_message %>
+  <div class="error_form">
+    <%= @error_message %>
+  </div>
+<% end %>
+<div class="error">
+ <% @users.errors.full_messages.each do |message| %>
+  <%= message %>
+ <% end %>
+</div>
+<div class="account_edit">
+  <h1>アカウント編集</h1>
+  <%= form_tag("/users/#{@users.id}", method: :patch) do %>
+    <p>メールアドレス編集</p>
+    <input type="text" name="email" value="<%= @users.email %>" class="input_form">
+    <p>パスワード編集</p>
+    <input type="password" name="password" class="input_form" placeholder="変更する場合のみ入力">
+    <p>パスワード編集確認</p>
+    <input type="password" name="password_confirmation" class="input_form" placeholder="変更する場合のみ入力">
+    <p>現在のパスワード</p>
+    <input type="password" name="current_password" class="input_form" placeholder="現在のパスワードを入力"><br>
+    <input type="submit" class="edit_btn" value="更新">
+  <% end %>
+</div>

@@ -1,0 +1,34 @@
+<div class="top_main">
+    <img src="/top.jpg">
+    <div class="main_area">
+        <h1>Reservationで旅に出よう<br>
+        <p>エリア</p>
+        <%= form_tag("/posts/search",method: :post) do %>
+            <input type="text" name="search_area" placeholder="東京" class="main_area_input">
+            <input type="submit" value="探す" class="search_btn">
+        <% end %>
+    </div>
+</div>    
+<div class="top_under">
+    <h1>おすすめのエリア</h1>
+    <div class="img_flex">
+        <div class="hokkaido">
+           <img src="/hokkaido.jpeg"> 
+           <p>北海道</p>
+        </div>
+        <div class="iwate">
+          <img src="/iwate.jpg">
+          <p>岩手</p>
+        </div>
+        <div class="shiga">
+            <img src="/shiga.jpeg">
+            <p>滋賀</p>
+        </div>
+        <div class="miyazaki">
+            <img src="/miyazaki.jpeg">
+            <p>宮崎</p>
+        </div>
+    </div>
+</div>
+
+

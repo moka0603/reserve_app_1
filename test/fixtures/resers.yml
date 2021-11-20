@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  people: 1
+  start: 2021-11-15
+  stop: 2021-11-15
+  price: 1
+  days: 1
+
+two:
+  people: 1
+  start: 2021-11-15
+  stop: 2021-11-15
+  price: 1
+  days: 1

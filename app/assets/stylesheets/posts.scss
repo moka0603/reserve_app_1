@@ -1,0 +1,266 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.posts_new {
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 90px;
+  border: 2px solid #d1d1d1;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.posts_new_title {
+  font-size: 24px;
+  padding: 10px 0 30px;
+  border-bottom: 2px solid #d1d1d1;
+}
+
+.room_name, .room_introduction, .price, .address, .room_image {
+  display: flex;
+  padding: 30px 0;
+  border-bottom: 1px solid #d1d1d1;
+}
+
+.room_name span {
+  margin-right: 180px;
+}
+
+.room_introduction span {
+  margin-right: 160px;
+}
+
+.price span {
+  margin-right: 174px;
+}
+
+.address span {
+  margin-right: 205px;
+}
+
+.room_image span {
+  margin-right: 155px;
+}
+
+.posts_new span {
+  background-color: #ff3855;
+  border-radius: 10px;
+  padding: 5px;
+  color: white;
+  font-size: 10px;
+  margin-left: 10px;
+}
+
+.room_name input, .price input, .address input {
+  width: 500px;
+  height: 30px;
+}
+
+.room_introduction textarea {
+  width: 500px;
+  height: 120px
+}
+
+.post_btn {
+  padding-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.post_btn input {
+  display: block;
+  margin-left: 300px;
+  width: 200px;
+  border-radius: 10px;
+  background-color: #2897ff;
+  border: 2px solid #2897ff;
+  font-size: 20px;
+  color: white;
+  cursor: pointer;
+}
+/**********登録済みルーム一覧*********/
+.posts_index {
+  padding: 40px 80px 30px;  
+}
+
+.posts_index_title h1 {
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.posts_index table {
+  border: 1px solid #bcbcbc;
+}
+
+.posts_index th {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+}
+
+.posts_index tr {
+  border-bottom: 1px solid #bcbcbc;
+  border-right: 1px solid #bcbcbc;
+}
+
+
+.posts_index img {
+  width: 200px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.image_th {
+  width: 202px;
+}
+
+.name_th {
+  width: 140px;
+}
+
+.introduction_th {
+  width: 300px;
+}
+.price_th {
+  width: 120px;
+}
+
+.created_th {
+  width: 250px;
+}
+
+.posts_index th {
+  font-size: 12px;
+}
+
+/*******show**********/
+.reservation_room {
+  display: flex;
+  width: 100%;
+  padding: 40px 100px;
+
+}
+
+.reserve_img img {
+  width: 600px;
+  height: 450px;
+  object-fit: cover;
+}
+
+.reserve_contents {
+  margin-left: 40px;
+  border: 2px solid #bcbcbc;
+  padding: 20px;
+}
+
+.reserve_price {
+  font-size: 22px;
+  padding-bottom: 40px;
+}
+
+.start_p {
+  padding-bottom: 10px;
+}
+
+.stop_p {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.date_input {
+  width: 280px;
+  height: 30px;
+}
+
+.people_input {
+  width: 278px;
+  height: 30px;
+}
+
+.people_p {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+.reserve_btn {
+  display: block;
+  margin-top: 20px;
+  width: 284px;
+  height: 30px;
+  background-color: #5bc0ff;
+  border : 2px solid #5bc0ff;
+  border-radius: 8px;
+  color: white;
+}
+
+.show-bottom {
+  padding: 30px 100px;
+}
+
+.user_icon img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+
+.show_room_introduction {
+  display: flex;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #afafaf;
+  width: 700px;
+}
+
+.introduction_right {
+  padding-left: 30px;
+}
+
+.room_title {
+  font-size: 20px;
+  padding-bottom: 20px;
+}
+
+.introduction_p {
+  padding: 30px 0 30px 30px;
+  border-bottom: 1px solid #afafaf;
+  margin-bottom: 30px;
+  width: 700px;
+  font-size: 14px;
+}
+
+/******search********/
+.posts_search h1 {
+  font-size: 28px;
+}
+
+.posts_search {
+  padding: 40px;
+}
+
+.search_flex {
+  padding-top: 30px;
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search_flex_box {
+  width: 25%;
+  margin-left: 30px;
+  border: 2px solid #dddddd;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.search_flex img {
+  width: 240px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.search_flex_box p {
+  padding-top: 10px;
+  padding-left: 12px;
+}

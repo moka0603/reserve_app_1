@@ -1,0 +1,89 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.top_main img {
+   width: 100%;
+ }
+ 
+.top_main {
+   position: relative;
+ }
+
+.top_main img {
+   position: absolute;
+   z-index: 1;
+}
+
+.main_area {
+   position: absolute;
+   z-index: 2;
+   background-color: white;
+   padding: 40px 20px;
+   border-radius: 10px;
+   top: 300px;
+   right: 100px;
+ }
+
+.main_area h1 {
+   font-size: 24px;  
+}
+
+.main_area p {
+   padding-top: 10px;
+   font-size: 18px;
+   color: #707070;
+}
+
+.main_area_input {
+   margin-top: 12px; 
+   width: 400px;
+   height: 30px;
+}
+
+.search_btn {
+   margin-top: 10px;
+   display: block;
+   width: 408px;
+   height: 40px;
+   background-color: #b5b5b5;
+   border: 2px solid #b5b5b5;
+   border-radius: 8px;
+}
+
+
+
+.top_under {
+   padding: 0 80px 100px;
+   position: relative;
+   z-index: 3;
+   top: 1000px;
+}
+
+.top_under h1 {
+   font-size: 24px;
+   font-weight: bold;
+   padding-bottom: 14px;
+}
+
+.img_flex {
+   width: 100%;
+   display: flex;
+}
+
+.hokkaido, .iwate, .shiga, .miyazaki {
+   width: 25%;
+}
+
+.hokkaido img, .iwate img, .shiga img, .miyazaki img {
+   width: 280px;
+   height: 300px;
+   display: block;
+}
+
+.hokkaido p, .iwate p, .shiga p, .miyazaki p {
+   padding-top: 10px;
+   font-size: 20px;
+   text-align: center;
+}
+
+

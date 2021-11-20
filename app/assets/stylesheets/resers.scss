@@ -1,0 +1,141 @@
+// Place all the styles related to the resers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.reser_new {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  padding: 60px;
+  border: 2px solid #afafaf;
+  border-radius: 5px;
+  
+}
+
+.reser_new h1 {
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.new_start, .new_stop, .new_days, .new_people, .new_total {
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.confirm_form input {
+font-size: 20px;
+width: 400px;
+height: 36px;
+}
+
+.confirm_btn input {
+  display: block;
+  width: 400px;
+  height: 36px;
+  margin-top: 10px;
+}
+
+.new_price_input {
+  margin-bottom: 20px;
+}
+
+.confirm_btn_top {
+  background-color: #5db4fc;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid #5db4fc;
+}
+
+.confirm_btn_bottom {
+  background-color: #c6c6c6;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid #c6c6c6;
+}
+
+/*********予約完了画面**********/
+
+.reserve_show table {
+  border: 2px solid #89caff;
+  border-radius: 8px;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+  text-align: left;
+ 
+}
+
+.reserve_show th {
+  font-size: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #a5d8ff;
+}
+
+.reserve_show_right {
+ padding-right: 40px;
+}
+
+.reserve_show_left {
+  padding-left: 20px;
+}
+
+/**********予約済み一覧************/
+
+.reserve_index {
+  padding: 40px 80px 30px;  
+}
+
+.reserve_index h1 {
+  font-size: 30px;
+  padding-bottom: 30px;
+}
+
+.reserve_index table {
+  border: 1px solid #bcbcbc;
+}
+
+.reserve_index th {
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+  
+}
+
+.reserve_index tr {
+ 
+  border-right: 1px solid #bcbcbc;
+ 
+}
+
+
+.reserve_index img {
+  width: 200px;
+  height: 160px;
+  object-fit: cover;
+}
+
+.image_th {
+  width: 202px;
+}
+
+.name_th {
+  width: 140px;
+}
+
+.introduction_th {
+  width: 300px;
+}
+.price_th {
+  width: 120px;
+}
+
+.created_th {
+  width: 250px;
+}
+
+.reserve_index th {
+  font-size: 12px;
+}

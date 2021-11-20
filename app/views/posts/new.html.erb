@@ -1,0 +1,46 @@
+<div class="error">
+ <% @post.errors.full_messages.each do |message| %>
+  <%= message %>
+  <br>
+ <% end %>
+</div>
+<div class="posts_new">
+  <div class="posts_new_title">
+    ルーム情報登録
+  </div>
+  <%= form_tag("/posts", method: :post, multipart: true ) do %>
+  <div class="room_name">
+    <h1>ルーム名<span>必須</span></h1>
+    <div class="flex_right">
+      <input type="text" name="room_name" placeholder="ルーム名入力">
+    </div>
+  </div>
+  <div class="room_introduction">
+    <h1>ルーム紹介<span>必須</span></h1>
+    <div class="flex_right">
+      <textarea name="room_introduction" placeholder="ルーム説明を入力"></textarea>
+    </div>
+  </div>
+  <div class="price">
+    <h1>利用料金<span>必須</span></h1>
+    <div class="flex_right">
+      <input name="price" type="number" placeholder="一日あたりの料金を入力" min="1">
+    </div>
+  </div>
+  <div class="address">
+    <h1>住所<span>必須</span></h1>
+    <div class="flex_right">
+      <input type="text" name="address" placeholder="住所を入力">
+    </div>
+  </div>
+  <div class="room_image">
+    <h1>ルーム画像<span>必須</span></h1>
+    <div class="flex_right">
+      <input type="file" name="room_image">
+    </div>
+  </div>
+  <div class="post_btn">
+    <input type="submit" value="登録">
+  </div>
+  <% end %>
+</div>

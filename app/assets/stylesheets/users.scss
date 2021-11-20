@@ -1,0 +1,244 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.account {
+  margin-top: 40px;
+  padding: 23px;
+  background-color: #f2f2f2;
+  width: 340px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+.account input {
+  display: block;
+  width: 300px;
+  height: 30px;
+  margin: 10px;
+}
+
+.sign_up_btn {
+  background-color: #2bbbff;
+  border: 2px solid #2bbbff;
+  border-radius: 8px;
+}
+
+
+
+/**********ログインフォーム********/
+.login_form {
+  padding: 20px;
+  background-color: #f7f7f7;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 340px;
+  border-radius: 12px;
+  text-align: center;
+  
+}
+
+.login_form h1 {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 20px;
+}
+
+.login_form p {
+  padding-bottom: 10px;
+  padding-top: 10px;
+  color: #5b5b5b;
+}
+
+.email_input, .password_input {
+  width: 280px;
+  height: 24px;
+}
+
+.login_btn {
+  margin-top: 22px;
+  width: 290px;
+  height: 36px;
+  background-color: #7ccaff;
+  border: 2px solid #7ccaff;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+}
+
+.error_form {
+  text-align: center;
+  padding-top: 30px;
+  font-size: 14px;
+  color: #37adfc;
+}
+/*************アカウント詳細************/
+
+.configuration {
+  display: flex;
+  width: 100%;
+  height: 1000px;
+}
+
+.side {
+  width: 16%;
+  border-right: 2px solid #c4c4c4;
+  text-align: center;
+ 
+}
+
+.side_account, .side_profile {
+  font-size: 20px;
+  padding: 20px 0;
+  display: block;
+  text-decoration: none;
+  color: #3d3d3d;
+}
+
+.account_configration, .profile {
+  width: 84%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.account_configration table, .account_configration p {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.account_configration p {
+  font-size: 24px;
+  padding: 30px 0;
+}
+
+.account_configration th {
+  padding: 10px;
+}
+
+.show_edit_btn {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 20px;
+  background-color: #2dbcff;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 160px;
+  padding: 14px 0;
+  text-decoration: none;
+  color: white;
+}
+
+/********show2*********/
+.profile {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.profile h1 {
+  font-size: 30px;
+  padding-top: 20px;
+}
+
+.profile p {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.profile img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  margin-top: 20px;
+  object-fit: cover;
+}
+
+.icon_edit {
+  padding: 30px 0;
+  border-top: 2px solid #c4c4c4;
+  border-bottom: 2px solid #c4c4c4;
+}
+
+.profile input {
+  margin-bottom: 10px;
+ 
+}
+
+.name_edit {
+  border-bottom: 2px solid #c4c4c4;
+  padding: 30px 0;
+}
+
+.icon {
+  padding: 20px 0;
+}
+
+.introduction {
+  padding-top: 30px;
+  padding-bottom: 30px
+}
+
+.name_edit input {
+  width: 200px;
+  height: 20px;
+}
+
+.introduction textarea {
+  width: 600px;
+  height: 200px;
+  font-size: 18px;
+}
+
+.update_btn {
+  border-top: 2px solid #c4c4c4;
+  padding: 40px 0;
+}
+
+.update_btn input {
+  width: 260px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #14b4ff;
+  border: 2px solid #14b4ff;
+  color: white;
+  font-size: 16px;
+  letter-spacing: 20px;
+}
+
+/**********アカウント編集*************/
+.account_edit {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.account_edit h1 {
+  font-size: 30px;
+  padding: 30px 0;
+}
+
+.account_edit p {
+  font-size: 20px;
+  padding: 14px 0;
+}
+
+.account_edit .input_form {
+  height: 20px;
+  width: 200px;
+}
+
+.edit_btn {
+  margin-top: 20px;
+  height: 30px;
+  width: 210px;
+}
+
+
+
+

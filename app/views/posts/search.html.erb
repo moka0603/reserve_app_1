@@ -1,0 +1,13 @@
+<div class="posts_search">
+    <h1>検索結果：<%= @posts.count %>件</h1>
+    <div class="search_flex">
+    <% @posts.each do |post| %>
+        <div class="search_flex_box">
+           <img src="<%= "/post_images/#{post.room_image}" %>">
+           <p class="search_name"><%= link_to(post.room_name,"/posts/#{post.id}") %></p>
+           <p class="search_address">〒<%= post.address %></p>
+           <p class="search_price">¥<%= post.price %></p>
+        </div>
+    <% end %>
+    </div>
+</div>

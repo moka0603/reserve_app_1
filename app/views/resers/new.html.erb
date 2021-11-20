@@ -1,0 +1,22 @@
+<div class="reser_new">
+  <h1>予約内容確認</h1>
+  <%= form_tag("/resers/create") do %>
+  <div class="confirm_form">
+    <p class="new_start">開始日</p>
+    <input type="date" name="start" value="<%= @reser.start %>" readonly="readonly">
+    <p class="new_stop">終了日</p>
+    <input type="date" name="stop" value="<%= @reser.stop %>" readonly="readonly">
+    <p class="new_days">日数</p>
+    <input type="number" name="days" value="<%= @date_gap %>" readonly="readonly">
+    <p class="new_people">人数</p>
+    <input type="number" value="<%= @reser.people %>" readonly="readonly" name="people">
+    <p class="new_total">合計金額</p>
+    <input type="number" name="price" value="<%= @reser.price %>" readonly="readonly" class="new_price_input">
+    <input type="hidden" value="<%= @post.id %>" name="poid">
+  </div>
+  <div class="confirm_btn">
+    <input type="submit" value="予約を確定" name="confirm" class="confirm_btn_top">
+    <input type="submit" value="ルーム詳細に戻る" name="room_show" class="confirm_btn_bottom">
+  </div>
+  <% end %>
+</div>
