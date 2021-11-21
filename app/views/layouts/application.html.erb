@@ -18,13 +18,14 @@
         </div>
        
         <div class="area_search">
-          <%= form_tag("/posts/search",method: :post) do %>
-            <input type="text" name="search_area" placeholder="&#xf002; エリア">
+          <%= form_tag("/posts/search") do %>
+            <input type="text" name="search_area" class="area_input" placeholder="&#xf002; エリア">
+           
           <% end %>
         </div>
         <div class="keyword_search">
-          <%= form_tag("/posts/search",method: :post) do %>
-            <input type="text" name="search_keyword" placeholder="&#xf3c5; キーワード">
+          <%= form_tag("/posts/search") do %>
+            <input type="text" name="search_keyword" class="keyword_input" placeholder="&#xf3c5; キーワード">
           <% end %>
         </div>
       </div>
@@ -47,10 +48,8 @@
           </div>
            <script>
            $(function(){
-          //.accordion1の中のp要素がクリックされたら
-            $('.user_icon_name').click(function(){
-          //クリックされた.accordion1の中のp要素に隣接するul要素が開いたり閉じたりする。
-              $(this).next('.menu').slideToggle();
+              $('.user_icon_name').click(function(){
+               $(this).next('.menu').slideToggle();
               });
             });
           </script>

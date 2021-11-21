@@ -22,31 +22,31 @@
   padding-top: 10px;
 }
 
-.confirm_form input {
+.confirm_form_input {
 font-size: 20px;
 width: 400px;
 height: 36px;
 }
 
-.confirm_btn input {
+.confirm_btn_input {
   display: block;
   width: 400px;
   height: 36px;
   margin-top: 10px;
 }
 
-.new_price_input {
+#new_price_input {
   margin-bottom: 20px;
 }
 
-.confirm_btn_top {
+#confirm_btn_top {
   background-color: #5db4fc;
   color: white;
   border-radius: 8px;
   border: 2px solid #5db4fc;
 }
 
-.confirm_btn_bottom {
+#confirm_btn_bottom {
   background-color: #c6c6c6;
   color: white;
   border-radius: 8px;

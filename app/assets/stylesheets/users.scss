@@ -12,7 +12,7 @@
   border-radius: 10px;
 }
 
-.account input {
+.account_input {
   display: block;
   width: 300px;
   height: 30px;
@@ -164,7 +164,7 @@
   border-bottom: 2px solid #c4c4c4;
 }
 
-.profile input {
+.profile_input {
   margin-bottom: 10px;
  
 }
@@ -183,12 +183,12 @@
   padding-bottom: 30px
 }
 
-.name_edit input {
+#name_edit_input {
   width: 200px;
   height: 20px;
 }
 
-.introduction textarea {
+.introduction_textarea {
   width: 600px;
   height: 200px;
   font-size: 18px;
@@ -199,7 +199,7 @@
   padding: 40px 0;
 }
 
-.update_btn input {
+#update_btn_input {
   width: 260px;
   height: 40px;
   border-radius: 10px;

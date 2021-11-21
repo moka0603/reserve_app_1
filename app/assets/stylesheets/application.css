@@ -124,7 +124,7 @@ header {
   margin-left :10px; 
 }
 
-.area_search input, .keyword_search input {
+.keyword_input, .area_input{
   height: 30px;
   font-size: 18px;
   font-family: FontAwesome;

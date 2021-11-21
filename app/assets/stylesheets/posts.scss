@@ -53,12 +53,12 @@
   margin-left: 10px;
 }
 
-.room_name input, .price input, .address input {
+.room_name_input, .price_input, .address_input {
   width: 500px;
   height: 30px;
 }
 
-.room_introduction textarea {
+.room_introduction_textarea {
   width: 500px;
   height: 120px
 }
@@ -68,7 +68,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-.post_btn input {
+.post_btn_input {
   display: block;
   margin-left: 300px;
   width: 200px;

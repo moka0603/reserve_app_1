@@ -11,14 +11,7 @@ class PostsController < ApplicationController
   end
  
   def create
-    @post = Post.new(
-      room_name: params[:room_name],
-      room_introduction: params[:room_introduction],
-      price: params[:price],
-      address: params[:address],
-      user_id: @current_user.id,
-      room_image: "#{params[:room_name]}.jpg" 
-    )
+    @post = Post.new(post_params)
     if params[:room_image]
       image = params[:room_image]
       File.binwrite("public/post_images/#{@post.room_image}", image.read)
@@ -43,6 +36,11 @@ class PostsController < ApplicationController
     elsif params[:search_keyword]
       @posts = Post.where("room_name LIKE ? OR address LIKE ?","%#{params[:search_keyword]}%", "%#{params[:search_keyword]}%")
     end
+  end
+  
+  private
+  def post_params
+    params.require(:post).permit( :room_name, :room_introduction, :address, :price, :room_image, :user_id)
   end
   
 end

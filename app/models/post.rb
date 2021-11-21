@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   validates :room_image, {presence: true}
   validates :price, {presence: true}
   validates :address, {presence: true}
-  validates :user_id, {presence: true}
+  
   belongs_to :user
   has_many :resers
   

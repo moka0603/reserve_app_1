@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authenticate_user, {only: [:show, :show2, :edit, :update, :update2]}
+  before_action :authenticate_user, {only: [:show, :show2]}
   before_action :forbid_login_user, {only: [:new, :create, :login_form, :login]}
   
   def new
@@ -7,12 +7,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    @user = User.new(
-      name: params[:name],
-      email: params[:email],
-      icon_image: "default_user.jpg",
-      password: params[:password],
-      password_confirmation: params[:password_confirmation])
+    @user = User.new(user_params)
     if @user.save
       session[:user_email] = @user.email
       redirect_to("/")
@@ -27,53 +22,48 @@ class UsersController < ApplicationController
   end
   
   def show2
-    @users = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
   
  
   def edit
-    @users = User.find_by(id: params[:id])
+    @user = User.find_by(id: params[:id])
   end
  
   def update
-    @users = User.find_by(id: params[:id])
-    @current_password = params[:current_password]
-    if @users.authenticate(@current_password)
-      @users.email = params[:email]
-      @users.password = params[:password]
-      @users.password_confirmation = params[:password_confirmation]
-      if @users.save
-        flash[:notice] = "ユーザー情報を編集しました"
-        redirect_to("/users/#{@users.id}")
+    if params[:email_edit]
+      @user = User.find_by(id: params[:id])
+      if @user.authenticate(params[:pass])
+        @user.update(user_params)
+       
+        if @user.save
+          session[:user_email] = @user.email 
+          flash[:notice] = "ユーザー情報を編集しました"
+          redirect_to("/users/#{@user.id}")
+        else
+          render("users/edit")
+        end
       else
-        render("users/edit")
+       @error_message = "現在のパスワードが間違っています" 
+       render("users/edit")
       end
-    else
-     @error_message = "現在のパスワードが間違っています" 
-     render("users/edit")
-    end
-  end
-  
-  def update2
-    @users = User.find_by(id: params[:id])
-    @users.name = params[:name]
-    @users.introduction = params[:introduction]
-    if params[:icon]
-      @users.icon_image = "#{@users.id}.jpg"
-      image = params[:icon]
-      File.binwrite("public/user_images/#{@users.icon_image}", image.read)
-    end
-    if @users.save
-      flash[:notice] = "ユーザー情報を編集しました"
-      redirect_to("/users/#{@users.id}/show2")
-    else
-      render("users/show2")
+    elsif params[:show2_edit]
+      @user = User.find_by(id: params[:id])
+      @user.update(user_params)
+      if params[:icon]
+        @user.icon_image = "#{@user.id}.jpg"
+        image = params[:icon]
+        File.binwrite("public/user_images/#{@user.icon_image}", image.read)
+      end     
+      if @user.save
+        flash[:notice] = "ユーザー情報を編集しました"
+        redirect_to("/users/#{@user.id}/show2")
+      else
+        render("users/show2")
+      end
     end
   end
  
-  def destroy
-  end
-  
   def login_form
     @user = User.new
   end
@@ -96,5 +86,10 @@ class UsersController < ApplicationController
     session[:user_email] = nil
     flash[:notice] = "ログアウトしました"
     redirect_to("/login")
+  end
+  
+  private
+  def user_params
+    params.require(:user).permit( :name, :email, :password_digest, :introduction, :icon_image, :password_confirmation, :password)
   end
 end

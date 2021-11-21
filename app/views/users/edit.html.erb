@@ -4,21 +4,21 @@
   </div>
 <% end %>
 <div class="error">
- <% @users.errors.full_messages.each do |message| %>
+ <% @user.errors.full_messages.each do |message| %>
   <%= message %>
  <% end %>
 </div>
 <div class="account_edit">
   <h1>アカウント編集</h1>
-  <%= form_tag("/users/#{@users.id}", method: :patch) do %>
+  <%= form_with model: @user, html: { method: :patch } do |f|  %>
     <p>メールアドレス編集</p>
-    <input type="text" name="email" value="<%= @users.email %>" class="input_form">
+    <%= f.text_field :email, value: "#{@user.email}", class: "input_form" %>
     <p>パスワード編集</p>
-    <input type="password" name="password" class="input_form" placeholder="変更する場合のみ入力">
+    <%= f.password_field :password, class: "input_form", placeholder: "変更する場合のみ入力" %>
     <p>パスワード編集確認</p>
-    <input type="password" name="password_confirmation" class="input_form" placeholder="変更する場合のみ入力">
+    <%= f.password_field :password_confirmation, class: "input_form", placeholder: "変更する場合のみ入力" %>
     <p>現在のパスワード</p>
-    <input type="password" name="current_password" class="input_form" placeholder="現在のパスワードを入力"><br>
-    <input type="submit" class="edit_btn" value="更新">
+    <%= f.password_field :password, name: :pass, class: "input_form", placeholder: "現在のパスワードを入力" %><br>
+    <%= f.submit "更新", class: "edit_btn",name: :email_edit %>
   <% end %>
 </div>

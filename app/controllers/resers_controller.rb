@@ -5,12 +5,7 @@ class ResersController < ApplicationController
   end
   
   def new
-    @reser = Reser.new(
-       people: params[:people],
-       start: params[:start],
-       stop: params[:stop],
-       post_id: params[:poid],
-       user_id: @current_user.id)
+    @reser = Reser.new(reser_params)
     @post = Post.find_by(id: @reser.post_id)
     @user = User.find_by(id: @current_user.id)
     if @reser.invalid? 
@@ -20,16 +15,9 @@ class ResersController < ApplicationController
       @reser.price = @post.price * @reser.people * @date_gap
     end
   end
-  
+    
   def create
-    @reser = Reser.new( 
-      people: params[:people],
-      start: params[:start],
-      stop: params[:stop],
-      post_id: params[:poid],
-      user_id: @current_user.id,
-      price: params[:price],
-      days: params[:days])
+    @reser = Reser.new(reser_params)
     @post = Post.find_by(id: @reser.post_id)
     @user = User.find_by(id: @current_user.id)
     if params[:room_show] || !@reser.save #戻るボタンを押したときまたは、@eventが保存されなかったらnewアクションを実行
@@ -43,5 +31,10 @@ class ResersController < ApplicationController
   def show
     @reser = Reser.find_by(id: params[:id])
     @post = Post.find_by(id: @reser.post_id)
+  end
+  
+  private
+  def reser_params
+    params.require(:reser).permit( :people, :start, :stop, :price, :days, :post_id, :user_id)
   end
 end

@@ -8,16 +8,17 @@
     <img src="<%= "/post_images/#{@post.room_image}" %>">
   </div>
   <div class="reserve_contents">
-    <%= form_tag("/resers/new",  method: :post) do %>
+    <%= form_with model: @reser, url: resers_new_path do |f|  %>
       <p class="reserve_price">¥<%= @post.price %>/日</p>
       <p class="start_p">開始日</p>
-      <input type="date" name="start" class="date_input">
+      <%= f.date_field :start, class: "date_input"%>
       <p class="stop_p">終了日</p>
-      <input type="date" name="stop" class="date_input">
+      <%= f.date_field :stop, class: "date_input"%>
       <p class="people_p">人数</p>
-      <input type="number" name="people" class="people_input" min="1">
-      <input type="hidden" value="<%= @post.id %>" name="poid">
-      <input type="submit" value="予約する" class="reserve_btn">
+      <%= f.number_field :people, class: "people_input", min: "1" %>
+      <%= f.hidden_field :post_id, value: "#{@post.id}" %>
+      <%= f.hidden_field :user_id, value: "#{@current_user.id} ", class: "confirm_form_input", readonly: true %>
+      <%= f.submit "予約する", class: "reserve_btn" %>
     <% end %>
    </div>
 </div>
