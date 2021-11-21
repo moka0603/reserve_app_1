@@ -1,0 +1,30 @@
+<div class="reserve_index">
+  <h1>予約済みルーム一覧</h1>
+  <table>
+    <div class="index-top">
+      <tr>
+        <th class="image_th">ルーム画像</th>
+        <th class="name_th">ルーム名</th>
+        <th class="introduction_th">ルーム紹介</th>
+        <th class="price_th">料金</th>
+        <th class="start_th">開始日</th>
+        <th class="stop_th">終了日</th>
+        <th class="created_th">予約完了日時</th>
+      </tr>
+    </div>
+   <div class="index-bottom">
+    <tr>
+    <% @resers.each do |reser| %>
+      <th class="image_th"><img src="<%= "/post_images/#{reser.post.room_image}" %>"></th>
+      <th class="name_th"><%= link_to(reser.post.room_name,"/posts/#{reser.post.id}") %></th>
+      <th class="introduction_th"><%= reser.post.room_introduction %></th>
+      <th class="price_th">¥<%= reser.price %></th>
+      <th class="start_th"><%= reser.start %></th>
+      <th class="stop_th"><%= reser.stop %></th>
+      <th class="created_th"><%= reser.created_at.to_s(:datetime_jp)  %></th>
+    <% end %>
+    </tr>
+    </div>
+   
+  </table>
+</div>

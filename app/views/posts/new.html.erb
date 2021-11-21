@@ -1,0 +1,48 @@
+<div class="error">
+ <% @post.errors.full_messages.each do |message| %>
+  <%= message %>
+  <br>
+ <% end %>
+</div>
+<div class="posts_new">
+  <div class="posts_new_title">
+    ルーム情報登録
+  </div>
+  <%= form_with model: @post, html: { method: :post, multipart: true }  do |f|  %>
+    <div class="room_name">
+      <h1>ルーム名<span>必須</span></h1>
+      <div class="flex_right">
+        <%= f.text_field :room_name, class: "room_name_input", placeholder: "ルーム名入力" %>
+      </div>
+    </div>
+    <div class="room_introduction">
+      <h1>ルーム紹介<span>必須</span></h1>
+      <div class="flex_right">
+        <%= f.text_area :room_introduction, class: "room_introduction_textarea", placeholder:"ルーム説明を入力" %>
+      </div>
+    </div>
+    <div class="price">
+      <h1>利用料金<span>必須</span></h1>
+      <div class="flex_right">
+        <%= f.number_field :price, class: "price_input", placeholder: "一日あたりの料金を入力", min: "1"  %>
+      </div>
+    </div>
+    <div class="address">
+      <h1>住所<span>必須</span></h1>
+      <div class="flex_right">
+       <%= f.text_field :address, class: "address_input", placeholder: "住所を入力" %>
+      </div>
+    </div>
+    <div class="room_image">
+      <h1>ルーム画像<span>必須</span></h1>
+      <div class="flex_right">
+        <%= f.file_field :room_image, class: "room_image_input"%>
+      </div>
+    </div>
+    <%= f.hidden_field :user_id, value: "#{@current_user.id}" %>
+    <%= f.hidden_field :room_image, value: "#{params[:room_name]}.jpg" %>
+    <div class="post_btn">
+      <%= f.submit "登録", class: "post_btn_input" %>
+    </div>
+  <% end %>
+</div>

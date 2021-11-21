@@ -1,0 +1,20 @@
+<div class="configuration">
+  <div class="side">
+    <%= link_to("アカウント","/users/#{@users.id}", {class: "side_account"}) %>
+    <%= link_to("プロフィール","/users/#{@users.id}/show2", {class: "side_profile"}) %>
+  </div>
+  <div class="account_configration">
+    <p>アカウント</p>
+    <table>
+        <tr>
+          <th class="email_left">メールアドレス</th>
+          <th class="email_right"><%= @users.email %></th>
+        </tr>
+        <tr>
+          <th class="password_left">パスワード</th>
+          <th class="password_right"><%= @users.password %></th>
+        </tr>
+    </table>
+    <%= link_to("編集","/users/#{@users.id}/edit", {class: "show_edit_btn"}) %>
+  </div>
+</div>

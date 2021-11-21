@@ -7,10 +7,63 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://kit.fontawesome.com/7280bc570c.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
-
   <body>
+    <header>
+      <div class="header_left">
+        <div class=" title">
+          <%= link_to("Reservation","/", {class: "header_title"}) %>
+        </div>
+       
+        <div class="area_search">
+          <%= form_tag("/posts/search") do %>
+            <input type="text" name="search_area" class="area_input" placeholder="&#xf002; エリア">
+           
+          <% end %>
+        </div>
+        <div class="keyword_search">
+          <%= form_tag("/posts/search") do %>
+            <input type="text" name="search_keyword" class="keyword_input" placeholder="&#xf3c5; キーワード">
+          <% end %>
+        </div>
+      </div>
+      <div class="header_right">
+        <% if @current_user %>
+          <div class="menu_top">
+            <div class="user_icon_name">
+              <p class="click_btn"><%= @current_user.name %></p>
+              <img src="<%="/user_images/#{@current_user.icon_image}" %>" >
+            </div>
+            <div class="menu">
+              <ul id="links" class="link_ul">
+                <li><%= link_to("ルーム登録","/posts/new", {class: "header_link5"}) %></li>
+                <li><%= link_to("登録済みルーム一覧","/posts", {class: "header_link6"}) %></li>
+                <li><%= link_to("予約済みルーム一覧","/resers", {class: "header_link7"}) %></li>
+                <li><%= link_to("設定","/users/#{@current_user.id}", {class: "header_link3"}) %></li>
+                <li><%= link_to("ログアウト","/logout",{class: "header_link4"}) %></li>
+              </ul>
+            </div>
+          </div>
+           <script>
+           $(function(){
+              $('.user_icon_name').click(function(){
+               $(this).next('.menu').slideToggle();
+              });
+            });
+          </script>
+        <% else %>
+          <%= link_to("ログイン","/login", {class: "header_link"}) %>
+          <%= link_to("登録する","/users/new",{class: "header_link2"}) %>
+        <% end %>
+      </div>
+    </header>
+    <% if flash[:notice] %>
+      <div class="flash">
+        <%= flash[:notice] %>
+      </div>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -1,0 +1,34 @@
+<div class="configuration">
+  <div class="side">
+    <%= link_to("アカウント","/users/#{@user.id}", {class: "side_account"}) %>
+    <%= link_to("プロフィール","/users/#{@user.id}/show2", {class: "side_profile"}) %>
+  </div>
+  <div class="profile">
+    <div class="error">
+     <% @user.errors.full_messages.each do |message| %>
+      <%= message %><br>
+     <% end %>
+    </div>
+    <h1>プロフィール</p>
+    <div class="icon">
+      <img src="<%="/user_images/#{@user.icon_image}" %>" >
+    </div>
+    <%= form_with model: @user, html:{ multipart: true }  do |f|  %>
+    <div class="icon_edit">
+      <p>アイコン画像編集</p>
+      <%= f.file_field :icon_image,name: :icon, class: "profile_input"%>
+    </div>
+    <div class="name_edit">
+      <p>名前</p>
+      <%= f.text_field :name, value: "#{@user.name}", class: "profile_input", id: "name_edit_input" %>
+    </div>
+    <div class="introduction">
+      <p>自己紹介</p>
+      <%= f.text_area :introduction, value: "#{@user.introduction}", class: "introduction_textarea" %>
+    </div>
+    <div class="update_btn">
+      <%= f.submit "更新", class: "profile_input", id: "update_btn_input",name: :show2_edit %>
+    </div>
+    <% end %>
+  </div>
+</div>

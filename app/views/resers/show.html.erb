@@ -1,0 +1,20 @@
+<div class="reserve_show">
+  <table>
+    <tr>
+      <th class="reserve_show_left">予約した部屋</th>
+      <th class="reserve_show_right"><%= @post.room_name %></th>
+    </tr>
+    <tr>
+      <th class="reserve_show_left">開始日</th>
+      <th class="reserve_show_right"><%= @reser.start %></th>
+    </tr>
+    <tr>
+      <th class="reserve_show_left">終了日</th>
+      <th class="reserve_show_right"><%= @reser.stop %></th>
+    </tr>
+    <tr>
+      <th class="reserve_show_left">料金</th>
+      <th class="reserve_show_right">¥<%= @reser.price %></th>
+    </tr>
+  </table>
+</div>

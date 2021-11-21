@@ -1,0 +1,23 @@
+<div class="reser_new">
+  <h1>予約内容確認</h1>
+  <%= form_with model: @reser, url: resers_create_path do |f| %>
+  <div class="confirm_form">
+    <p class="new_start">開始日</p>
+    <%= f.date_field :start, value: "#{@reser.start}", class: "confirm_form_input", readonly: true %>
+    <p class="new_stop">終了日</p>
+    <%= f.date_field :stop, value: "#{@reser.stop}", class: "confirm_form_input", readonly: true %>
+    <p class="new_days">日数</p>
+    <%= f.number_field :days, class: "confirm_form_input", value: "#{@date_gap}", readonly: true %>
+    <p class="new_people">人数</p>
+    <%= f.number_field :people, value:"#{@reser.people}", class: "confirm_form_input", readonly: true %>
+    <p class="new_total">合計金額</p>
+    <%= f.number_field :price, value: "#{@reser.price}", class: "confirm_form_input", readonly: true, id: "new_price_input" %>
+    <%= f.hidden_field :post_id, value: "#{@post.id}", class: "confirm_form_input", readonly: true %>
+    <%= f.hidden_field :user_id, value: "#{@current_user.id}", class: "confirm_form_input", readonly: true %>
+  </div>
+  <div class="confirm_btn">
+    <%= f.submit "予約を確定", name: :confirm, class: "confirm_btn_input", id: "confirm_btn_top" %>
+    <%= f.submit "ルーム詳細に戻る", name: :room_show, class: "confirm_btn_input", id: "confirm_btn_bottom" %>
+  </div>
+  <% end %>
+</div>

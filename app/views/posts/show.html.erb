@@ -1,0 +1,36 @@
+<div class="error">
+ <% @reser.errors.full_messages.each do |message| %>
+  <%= message %><br>
+ <% end %>
+</div>
+<div class="reservation_room">
+  <div class="reserve_img">
+    <img src="<%= "/post_images/#{@post.room_image}" %>">
+  </div>
+  <div class="reserve_contents">
+    <%= form_with model: @reser, url: resers_new_path do |f|  %>
+      <p class="reserve_price">¥<%= @post.price %>/日</p>
+      <p class="start_p">開始日</p>
+      <%= f.date_field :start, class: "date_input"%>
+      <p class="stop_p">終了日</p>
+      <%= f.date_field :stop, class: "date_input"%>
+      <p class="people_p">人数</p>
+      <%= f.number_field :people, class: "people_input", min: "1" %>
+      <%= f.hidden_field :post_id, value: "#{@post.id}" %>
+      <%= f.hidden_field :user_id, value: "#{@current_user.id} ", class: "confirm_form_input", readonly: true %>
+      <%= f.submit "予約する", class: "reserve_btn" %>
+    <% end %>
+   </div>
+</div>
+<div class="show-bottom">
+  <div class="show_room_introduction">
+    <div class="user_icon">
+      <img src="<%= "/user_images/#{@user.icon_image}" %>">
+    </div>
+    <div class="introduction_right">
+      <p class="room_title"><%= @post.room_name %></p>
+      <p class="room_address"><%= @post.address %></p>
+    </div>
+  </div>
+  <p class="introduction_p"><%= @post.room_introduction %></p>
+</div>

@@ -1,0 +1,18 @@
+<div class="error">
+ <% @user.errors.full_messages.each do |message| %>
+  <%= message %><br>
+ <% end %>
+</div>
+<div class="account">
+   <h1>新しいアカウントを作成</h1>
+    <%= form_with model: @user, html: { method: :post }  do |f|  %>
+     <%= f.text_field :name, class: "account_input", placeholder: "ユーザー名", value: "#{@user.name}" %>
+     <%= f.text_field :email, class: "account_input", value: "#{@user.email}", placeholder: "メールアドレス" %>
+     <%= f.password_field :password, class: "account_input", placeholder: "パスワード", value: "#{@user.password}" %>
+     <%= f.password_field :password_confirmation, class: "account_input", placeholder: "パスワード確認", value: "#{@varification}" %>
+     <%= f.hidden_field :icon_image, value: "default_user.jpg" %>
+     <%= f.submit "新規登録", class: "sign_up_btn" %>
+    <% end %>
+</div>
+
+
